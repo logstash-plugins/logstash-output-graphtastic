@@ -33,10 +33,12 @@ class LogStash::Outputs::GraphTastic < LogStash::Outputs::Base
   # metrics hash - you will provide a name for your metric and the metric 
   # data as key value pairs.  so for example:
   #
+  # [source,ruby]
   # metrics => { "Response" => "%{response}" } 
   #
   # example for the logstash config
   #
+  # [source,ruby]
   # metrics => [ "Response", "%{response}" ]
   #
   # NOTE: you can also use the dynamic fields for the key value as well as the actual value
