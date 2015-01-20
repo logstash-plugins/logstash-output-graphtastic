@@ -17,7 +17,6 @@ require "logstash/namespace"
 class LogStash::Outputs::GraphTastic < LogStash::Outputs::Base
   
   config_name "graphtastic"
-  milestone 2
   
   # options are udp(fastest - default) - rmi(faster) - rest(fast) - tcp(don't use TCP yet - some problems - errors out on linux)
   config :integration, :validate => ["udp","tcp","rmi","rest"], :default => "udp"
