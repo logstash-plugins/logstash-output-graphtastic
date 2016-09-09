@@ -95,9 +95,8 @@ class LogStash::Outputs::GraphTastic < LogStash::Outputs::Base
    end
 
   def receive(event)
-    
     # Set Intersection - returns a new array with the items that are the same between the two
-    if !@tags.empty? && (event["tags"] & @tags).size == 0
+    if !@tags.empty? && (event.get("tags") & @tags).size == 0
        # Skip events that have no tags in common with what we were configured
        @logger.debug("No Tags match for GraphTastic Output!")
        return
@@ -183,5 +182,4 @@ class LogStash::Outputs::GraphTastic < LogStash::Outputs::Base
   end
 
   def udpsocket; @socket ||= UDPSocket.new end
-
 end
